@@ -28,7 +28,7 @@ public class Task{
             write(this);
             return Cb;
         }else{
-            JOptionPane.showMessageDialog(null, "Not enough money, ask mommy 4 moor");
+            JOptionPane.showMessageDialog(null, "Not enough money");
             return cb;
         }
 

@@ -15,7 +15,7 @@ public class Login extends JFrame implements ActionListener {
     JLabel lusername = new JLabel("Username:");
     JLabel lpassword = new JLabel("Password:");
     public Login(){
-        String[] acctype = {"Normal User", "Privileged User", "Admin"};
+        String[] acctype = {"Normal User", "Privileged User", "Admin", "Register"};
         String sacc = (String) JOptionPane.showInputDialog(null, "Type of user?", "User Select", JOptionPane.QUESTION_MESSAGE, null, acctype, acctype[0]);
         setLayout(null);
         setTitle("Please Login");
@@ -90,7 +90,7 @@ public class Login extends JFrame implements ActionListener {
             this.setSize(350, 175);
             setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-        }else{
+        }else if(sacc.compareTo(acctype[2]) == 0){
             blogin.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     if(verify2("admin.csv")!= null){
@@ -123,6 +123,8 @@ public class Login extends JFrame implements ActionListener {
             this.setSize(350, 175);
             setDefaultCloseOperation(EXIT_ON_CLOSE);
 
+        }else{
+            //Call Raiyan's Registration JFrame
         }
 
     }
